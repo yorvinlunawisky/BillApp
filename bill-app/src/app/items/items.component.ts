@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HeaderService } from '../header/header.service';
 
 @Component({
   selector: 'app-items',
@@ -6,14 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./items.component.css']
 })
 export class ItemsComponent implements OnInit {
-  products = []
+  price = 22.50;
 
-
-
+  constructor(private headerService: HeaderService) { }
+  
   addToCar() {
-    console.log("clicked");
+    this.headerService.addPrice(this.price);
   }  
-  constructor() { }
 
   ngOnInit(): void {
   }
