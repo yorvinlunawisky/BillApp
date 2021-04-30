@@ -4,7 +4,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { ItemsComponent } from './items/items.component';
 import { HeaderComponent } from './header/header.component';
-import { HeaderService } from './header/header.service';
 
 @NgModule({
   declarations: [
@@ -15,7 +14,7 @@ import { HeaderService } from './header/header.service';
   imports: [
     BrowserModule
   ],
-  providers: [HeaderService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

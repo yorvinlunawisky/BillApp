@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { HeaderService } from '../header/header.service';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-items',
@@ -7,12 +6,13 @@ import { HeaderService } from '../header/header.service';
   styleUrls: ['./items.component.css']
 })
 export class ItemsComponent implements OnInit {
+  @Output()AddPrice: EventEmitter<number> = new EventEmitter<number>();
   price = 22.50;
 
-  constructor(private headerService: HeaderService) { }
+  constructor() { }
   
   addToCar() {
-    this.headerService.addPrice(this.price);
+    this.AddPrice
   }  
 
   ngOnInit(): void {
